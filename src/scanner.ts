@@ -17,7 +17,7 @@ export class Scanner {
       ? this.readIdentifier()
       : ((ch >= 48 && ch <= 57) || (ch === 46 && this.peek1() >= 48 && this.peek1() <= 57)) /* [0-9] */
         ? this.readNumber()
-        : ((ch === 34 /*"*/ || ch === 39 /*'*/))
+        : ((ch === 34 /*"*/ || ch === 39 /*' */))
           ? this.readString(ch === 34 ? "\"" : "'")
           : ch
             ? this.readSymbol(ch)
@@ -154,7 +154,7 @@ function unescape(ch: number): string {
   }
 }
 
-class LexerToken {
+export class LexerToken  {
   constructor(public type: string, public value: string, public start: number, public end: number) {
   }
 }

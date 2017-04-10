@@ -1,30 +1,30 @@
 {
+  "version": "2.2.1",
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es5",
-    "module": "umd",
-    "moduleResolution": "node",
-    "isolatedModules": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "declaration": true,
-    "noImplicitAny": true,
     "sourceMap": true,
-    "outDir": "lib",
-    "lib": [
-      "es6",
-      "es2015",
-      "es2016"
-    ],
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noResolve": true,
+    "removeComments": true,
+    "noLib": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "typeRoots": [
       "src/@types",
       "node_modules/@types"
     ]
   },
-  "include": [
-    "src"
+  "include" : [
+    "src",
+    "test"
   ],
   "exclude": [
-    "lib/**/*",
-    "node_modules/**/*"
+    "node_modules",
+    "dist",
+    "work"
   ]
 }

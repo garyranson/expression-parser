@@ -1,7 +1,7 @@
 import {expect} from "chai";
 import {Scanner} from "../src/scanner";
 
-describe("Scanner Tests 2", () => {
+describe("Scanner Tests", () => {
   function scan(expr: string) {
     return new Scanner(expr).next();
   }
@@ -32,7 +32,7 @@ describe("Scanner Tests 2", () => {
   it("bulk numeric tests", () => {
     for (let i = 0; i < 100; i++) {
       let s = i.toString();
-      expect(scan(s)).to.deep.equal({type: "number", value: s, start: 0, end: s.length - 1});
+      expect(scan(s)).to.deep.equal({type: "number", value: s, start: 0 , end: s.length - 1});
     }
     for (let i = 0; i < 100; i++) {
       let s = i.toString() + ".";

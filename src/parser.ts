@@ -1,59 +1,21 @@
-import * as Expressions from "./expressions";
 import LexerReader from "./lexer";
-
-interface ObjectProperties {
-  names: string[];
-  expressions: Array<Expression>;
-}
-
-let Constants = {
-  literalNull:      new Expressions.Literal("null", null),
-  literalTrue:      new Expressions.Literal("true", true),
-  literalFalse:     new Expressions.Literal("false", false),
-  literalUndefined: new Expressions.Literal("undefined", undefined)
-};
+import {
+  Expression, ObjectProperties,
+  Literal, LiteralNumber, LiteralString, MemberCallExpression, MemberAccessorExpression,
+  CallExpression, UnaryExpression, ObjectExpression, ArrayExpression, ConditionalExpression, ScopedAccessorExpression,
+  BinaryExpression, LogicalExpression
+} from "./expressions";
+import {LexerToken} from "./scanner";
 
 let emptyExpressionList: Array<Expression> = [];
 
-abstract class ExpressionFactory {
-  constructor(protected operator: string, public precedence: number) {
-  }
-
-  abstract create(left: Expression, right: Expression): Expression;
-}
-class BinaryExpressionFactory extends ExpressionFactory {
-  create(left: Expression, right: Expression): Expression {
-    return new Expressions.BinaryExpression(this.operator, left, right);
-  }
-}
-class LogicalExpressionFactory extends ExpressionFactory {
-  create(left: Expression, right: Expression): Expression {
-    return new Expressions.LogicalExpression(this.operator, left, right);
-  }
-}
-const BinaryFactories = {
-  or:               new LogicalExpressionFactory("||", 10),
-  and:              new LogicalExpressionFactory("&&", 20),
-  equal:            new BinaryExpressionFactory("==", 30),
-  notEqual:         new BinaryExpressionFactory("!=", 30),
-  absEqual:         new BinaryExpressionFactory("===", 30),
-  absNotEqual:      new BinaryExpressionFactory("!==", 30),
-  greaterThan:      new BinaryExpressionFactory(">", 40),
-  lessThan:         new BinaryExpressionFactory("<", 40),
-  greaterEqualThan: new BinaryExpressionFactory(">=", 40),
-  lessEqualThan:    new BinaryExpressionFactory("<=", 40),
-  add:              new BinaryExpressionFactory("+", 50),
-  subtract:         new BinaryExpressionFactory("-", 50),
-  multiply:         new BinaryExpressionFactory("*", 60),
-  divide:           new BinaryExpressionFactory("/", 60),
-  modulus:          new BinaryExpressionFactory("%", 60)
-};
-export default class Parser {
+export class Parser {
   parseExpression(input: string): Expression {
     return new ParserImpl(new LexerReader(input || "")).getExpression();
   }
 }
-export class ParserImpl {
+
+class ParserImpl {
   cur: LexerToken;
 
   constructor(private iterator: LexerReader) {
@@ -102,14 +64,14 @@ export class ParserImpl {
     this.consume();
     let trueCondition = this.parseExpression();
     if (this.expect(":")) {
-      return createConditionalExpression(expr, trueCondition, this.parseExpression());
+      return Creators.createConditionalExpression(expr, trueCondition, this.parseExpression());
     }
     this.raiseError("Conditional expression invalid");
   }
 
   parseIt(): Expression {
     let expr     = this.parsePrefix();
-    let operator = getOperatorFactory(this.cur.value);
+    let operator = Creators.getOperatorFactory(this.cur.value);
 
     if (operator) {
       this.consume();
@@ -117,7 +79,7 @@ export class ParserImpl {
       const expressions = [/*left*/expr, /*right*/this.parsePrefix()];
       const operators   = [operator];
 
-      while (operator = getOperatorFactory(this.cur.value)) {
+      while (operator = Creators.getOperatorFactory(this.cur.value)) {
         this.consume();
         // If operator on top of stack has greater precedence then pop/push expression
         while (o >= 0 && operator.precedence <= operators[o].precedence) {
@@ -170,7 +132,7 @@ export class ParserImpl {
     this.consume();
     const expr = this.cur.value === ")" ? emptyExpressionList : this.getExpressionList();
     if (this.expect(")")) {
-      return createCallExpression(lhs, expr);
+      return Creators.createCallExpression(lhs, expr);
     }
     this.raiseError("Expected close bracket");
   }
@@ -182,7 +144,7 @@ export class ParserImpl {
     }
     const expr = this.parseExpression();
     if (this.expect("]")) {
-      return createMemberAccessorExpression(lhs, expr, true);
+      return Creators.createMemberAccessorExpression(lhs, expr, true);
     }
     this.raiseError("Expected closing ]");
   }
@@ -190,18 +152,18 @@ export class ParserImpl {
   parseNamedMember(lhs: Expression): Expression {
     this.consume();
     if (this.cur.type === "token") {
-      const expr = createLiteralExpression("string", this.cur.value);
+      const expr = Creators.createLiteralExpression("string", this.cur.value);
       this.consume();
       return this.cur.value === "("
-        ? createMemberCallExpression(lhs, expr, this.parseArgs())
-        : createMemberAccessorExpression(lhs, expr, false);
+        ? Creators.createMemberCallExpression(lhs, expr, this.parseArgs())
+        : Creators.createMemberAccessorExpression(lhs, expr, false);
     }
     this.raiseError("Expected identifier");
   }
 
   parseUnary(unary: string) {
     this.consume();
-    return createUnaryExpression(unary, this.parsePrefix());
+    return Creators.createUnaryExpression(unary, this.parsePrefix());
   }
 
   parsePrimary() {
@@ -230,24 +192,24 @@ export class ParserImpl {
 
   parseIdentifier(name: string) {
     this.consume();
-    return createScopedAccessorExpression(name);
+    return Creators.createScopedAccessorExpression(name);
   }
 
   parseLiteral(type: string, value: string) {
     this.consume();
-    return createLiteralExpression(type, value);
+    return Creators.createLiteralExpression(type, value);
   }
 
   parseKeyword(keyword: string): Expression {
     this.consume();
-    return createConstExpression(keyword);
+    return Creators.createConstExpression(keyword);
   }
 
   parseArray(): Expression {
     this.consume();
     let expressions = this.cur.value === "]" ? [] : this.getExpressionList();
     if (this.expect("]")) {
-      return createArrayExpression(expressions);
+      return Creators.createArrayExpression(expressions);
     }
     this.raiseError("Unexpected token");
   }
@@ -265,12 +227,12 @@ export class ParserImpl {
     this.consume();
     const properties = this.parseObjectProperties();
     if (this.expect("}")) {
-      return createObjectExpression(properties);
+      return Creators.createObjectExpression(properties);
     }
     this.raiseError("Unexpected End");
   }
 
-  parseObjectProperties(): ObjectProperties {
+  private parseObjectProperties(): ObjectProperties {
     let propertyNames: Array<string>   = [];
     let expressions: Array<Expression> = [];
 
@@ -305,7 +267,6 @@ export class ParserImpl {
     this.raiseError("missing )");
   }
 
-
   getExpressionList(): Array<Expression> {
     let args: Array<Expression> = [];
     do {
@@ -319,81 +280,131 @@ export class ParserImpl {
   }
 }
 
-function createLiteralExpression(type: string, value: string): Expression {
-  switch (type) {
-    case "string":
-      return new Expressions.LiteralString(value);
-    case "number":
-      return new Expressions.LiteralNumber(parseFloat(value));
+
+export const Constants = {
+  literalNull : new Literal("null", null),
+  literalTrue:  new Literal("true", true),
+  literalFalse : new Literal("false", false),
+  literalUndefined: new Literal("undefined", undefined)
+};
+
+const Creators  = {
+  createLiteralExpression : function (type: string, value: string): Expression {
+    switch (type) {
+      case "string":
+        return new LiteralString(value);
+      case "number":
+        return new LiteralNumber(parseFloat(value));
+    }
+  },
+
+  createMemberCallExpression : function(lhs: Expression, expr: Expression, args: Expression[]): Expression {
+    return new MemberCallExpression(lhs, expr, args);
+  },
+
+  createMemberAccessorExpression: function(lhs: Expression, rhs: Expression, computed: boolean): Expression {
+    return new MemberAccessorExpression(lhs, rhs, computed);
+  },
+  createCallExpression: function(lhs: Expression, args: Array<Expression>): Expression {
+    return new CallExpression(lhs, args);
+  },
+  createConstExpression: function(keyword: string): Expression {
+    switch (keyword) {
+      case "true":
+        return Constants.literalTrue;
+      case "false":
+        return Constants.literalFalse;
+      case "null":
+        return Constants.literalNull;
+      case "undefined":
+        return Constants.literalUndefined;
+    }
+  },
+  createUnaryExpression: function(op: string, expr: Expression): Expression {
+    return new UnaryExpression(op, expr);
+  },
+  createObjectExpression: function(properties: ObjectProperties): Expression {
+    return new ObjectExpression(properties.names, properties.expressions);
+  },
+  createArrayExpression: function(rc: Array<Expression>): Expression {
+    return new ArrayExpression(rc);
+  },
+  createConditionalExpression: function(test: Expression, trueCondition: Expression, falseCondition: Expression): Expression {
+    return new ConditionalExpression(test, trueCondition, falseCondition);
+  },
+  createScopedAccessorExpression: function(name: string): Expression {
+    return new ScopedAccessorExpression(name);
+  },
+  getOperatorFactory: function(name: string): ExpressionFactory {
+    switch (name) {
+      case "||" :
+        return BinaryFactories.or;
+      case "&&" :
+        return BinaryFactories.and;
+      case "==":
+        return BinaryFactories.equal;
+      case "!=":
+        return BinaryFactories.notEqual;
+      case "===":
+        return BinaryFactories.absEqual;
+      case "!==":
+        return BinaryFactories.absNotEqual;
+      case "<":
+        return BinaryFactories.lessThan;
+      case ">":
+        return BinaryFactories.greaterThan;
+      case "<=":
+        return BinaryFactories.lessEqualThan;
+      case ">=":
+        return BinaryFactories.greaterEqualThan;
+      case "+" :
+        return BinaryFactories.add;
+      case "-" :
+        return BinaryFactories.subtract;
+      case "*" :
+        return BinaryFactories.multiply;
+      case "/" :
+        return BinaryFactories.divide;
+      case "%" :
+        return BinaryFactories.modulus;
+    }
   }
 }
-function createMemberCallExpression(lhs: Expression, expr: Expression, args: Expression[]): Expression {
-  return new Expressions.MemberCallExpression(lhs, expr, args);
+
+interface ExpressionFactory {
+  precedence: number;
+  create(left: Expression, right: Expression): Expression;
 }
-function createMemberAccessorExpression(lhs: Expression, rhs: Expression, computed: boolean): Expression {
-  return new Expressions.MemberAccessorExpression(lhs, rhs, computed);
-}
-function createCallExpression(lhs: Expression, args: Array<Expression>): Expression {
-  return new Expressions.CallExpression(lhs, args);
-}
-function createUnaryExpression(op: string, expr: Expression): Expression {
-  return new Expressions.UnaryExpression(op, expr);
-}
-function createObjectExpression(properties: ObjectProperties): Expression {
-  return new Expressions.ObjectExpression(properties.names, properties.expressions);
-}
-function createArrayExpression(rc: Array<Expression>): Expression {
-  return new Expressions.ArrayExpression(rc);
-}
-function createConstExpression(value: string): Expression {
-  switch (value) {
-    case "true":
-      return Constants.literalTrue;
-    case "false":
-      return Constants.literalFalse;
-    case "null":
-      return Constants.literalNull;
-    case "undefined":
-      return Constants.literalUndefined;
+
+class BinaryExpressionFactory implements ExpressionFactory {
+  constructor(protected operator: string, public precedence: number) {
+  }
+  create(left: Expression, right: Expression): Expression {
+    return new BinaryExpression(this.operator, left, right);
   }
 }
-function createConditionalExpression(test: Expression, trueCondition: Expression, falseCondition: Expression) {
-  return new Expressions.ConditionalExpression(test, trueCondition, falseCondition);
-}
-function createScopedAccessorExpression(name: string) {
-  return new Expressions.ScopedAccessorExpression(name);
-}
-function getOperatorFactory(name: string): ExpressionFactory {
-  switch (name) {
-    case "||" :
-      return BinaryFactories.or;
-    case "&&" :
-      return BinaryFactories.and;
-    case "==":
-      return BinaryFactories.equal;
-    case "!=":
-      return BinaryFactories.notEqual;
-    case "===":
-      return BinaryFactories.absEqual;
-    case "!==":
-      return BinaryFactories.absNotEqual;
-    case "<":
-      return BinaryFactories.lessThan;
-    case ">":
-      return BinaryFactories.greaterThan;
-    case "<=":
-      return BinaryFactories.lessEqualThan;
-    case ">=":
-      return BinaryFactories.greaterEqualThan;
-    case "+" :
-      return BinaryFactories.add;
-    case "-" :
-      return BinaryFactories.subtract;
-    case "*" :
-      return BinaryFactories.multiply;
-    case "/" :
-      return BinaryFactories.divide;
-    case "%" :
-      return BinaryFactories.modulus;
+class LogicalExpressionFactory implements ExpressionFactory {
+  constructor(protected operator: string, public precedence: number) {
+  }
+  create(left: Expression, right: Expression): Expression {
+    return new LogicalExpression(this.operator, left, right);
   }
 }
+
+const BinaryFactories =  {
+  or : new LogicalExpressionFactory("||", 10),
+  and : new LogicalExpressionFactory("&&", 20),
+  equal : new BinaryExpressionFactory("==", 30),
+  notEqual : new BinaryExpressionFactory("!=", 30),
+  absEqual : new BinaryExpressionFactory("===", 30),
+  absNotEqual : new BinaryExpressionFactory("!==", 30),
+  greaterThan : new BinaryExpressionFactory(">", 40),
+  lessThan : new BinaryExpressionFactory("<", 40),
+  greaterEqualThan : new BinaryExpressionFactory(">=", 40),
+  lessEqualThan : new BinaryExpressionFactory("<=", 40),
+  add : new BinaryExpressionFactory("+", 50),
+  subtract : new BinaryExpressionFactory("-", 50),
+  multiply : new BinaryExpressionFactory("*", 60),
+  divide : new BinaryExpressionFactory("/", 60),
+  modulus : new BinaryExpressionFactory("%", 60)
+};

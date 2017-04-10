@@ -1,10 +1,10 @@
-import Parser from "../src/parser";
+import {Parser} from "../src/parser";
 import {expect} from "chai";
 import {
   ArrayExpression,
   BinaryExpression,
   CallExpression,
-  ConditionalExpression,
+  ConditionalExpression, Expression,
   Literal,
   LiteralNumber,
   LiteralString,
@@ -19,11 +19,11 @@ import {
 describe("Parser Test Plan", () => {
   let parser: Parser;
 
-  function parse(str): Expression {
+  function parse(str: string): Expression {
     return parser.parseExpression(str);
   }
 
-  function parseFn(str): any {
+  function parseFn(str: string): any {
     return function () {
       return parser.parseExpression(str);
     };

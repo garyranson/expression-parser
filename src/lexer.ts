@@ -1,4 +1,4 @@
-import {Scanner} from "./scanner";
+import {LexerToken, Scanner} from "./scanner";
 
 export default class LexerReader {
   reader: Scanner;
@@ -8,6 +8,6 @@ export default class LexerReader {
   }
 
   next(): LexerToken {
-    return this.reader.next();
+    return  this.reader.next();
   }
 }
