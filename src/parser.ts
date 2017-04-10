@@ -9,7 +9,7 @@ import {LexerToken} from "./scanner";
 
 let emptyExpressionList: Array<Expression> = [];
 
-export class Parser {
+export default class Parser {
   parseExpression(input: string): Expression {
     return new ParserImpl(new LexerReader(input || "")).getExpression();
   }

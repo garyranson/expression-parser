@@ -1,2 +1,6 @@
-export {Parser} from "./parser";
-export {Expression, Visitor} from "./expressions";
+import Parser from "./parser";
+export function Parse() {
+  return Parser;
+}
+
+
