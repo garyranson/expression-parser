@@ -1,5 +1,3 @@
-import {Expression, Visitor} from "./@types/global";
-
 export interface ObjectProperties {
   names: string[];
   expressions: Array<Expression>;

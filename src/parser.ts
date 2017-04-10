@@ -6,7 +6,6 @@ import {
   BinaryExpression, LogicalExpression
 } from "./expressions";
 import {LexerToken} from "./scanner";
-import {Expression} from "./@types/global";
 
 let emptyExpressionList: Array<Expression> = [];
 
