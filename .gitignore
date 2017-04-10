@@ -1,7 +1,5 @@
-/src/**/*.js
-/src/**/*.map
 /node_modules
 /test/**/*.js
 /test/**/*.d.ts
 /test/**/*.map
-/src/**/*.d.ts
+*.tgz
