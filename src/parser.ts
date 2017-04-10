@@ -1,15 +1,16 @@
 import LexerReader from "./lexer";
 import {
-  Expression, ObjectProperties,
+  ObjectProperties,
   Literal, LiteralNumber, LiteralString, MemberCallExpression, MemberAccessorExpression,
   CallExpression, UnaryExpression, ObjectExpression, ArrayExpression, ConditionalExpression, ScopedAccessorExpression,
   BinaryExpression, LogicalExpression
 } from "./expressions";
 import {LexerToken} from "./scanner";
+import {Expression} from "./@types/global";
 
 let emptyExpressionList: Array<Expression> = [];
 
-export default class Parser {
+export class Parser {
   parseExpression(input: string): Expression {
     return new ParserImpl(new LexerReader(input || "")).getExpression();
   }

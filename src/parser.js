@@ -11,7 +11,7 @@ var Parser = (function () {
     };
     return Parser;
 }());
-exports.default = Parser;
+exports.Parser = Parser;
 var ParserImpl = (function () {
     function ParserImpl(iterator) {
         this.iterator = iterator;

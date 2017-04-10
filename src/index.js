@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var parser_1 = require("./parser");
-function Parse() {
-    return parser_1.default;
-}
-exports.Parse = Parse;
+exports.Parser = parser_1.Parser;
 //# sourceMappingURL=index.js.map
