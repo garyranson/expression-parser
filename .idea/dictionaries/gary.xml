@@ -3,6 +3,7 @@
     <words>
       <w>browserify</w>
       <w>sourcemaps</w>
+      <w>tsconfig</w>
       <w>tsify</w>
       <w>uglify</w>
     </words>

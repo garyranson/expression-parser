@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Expression Parser",
   "main": "src/index.js",
-  "typings": "src/index",
+  "typings": "src/index.d.ts",
   "scripts": {
     "test": "mocha"
   },
