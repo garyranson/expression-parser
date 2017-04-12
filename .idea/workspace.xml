@@ -6,52 +6,9 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1687b96-b68b-4c19-98b1-f06e5ac5cfc8" name="Default" comment="Latest">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/expressions.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/expressions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/expressions.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/index.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/index.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/lexer.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/lexer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/lexer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/parser.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/parser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/parser.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/scanner.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/scanner.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/src/scanner.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/lexer.nodespec.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/lexer.nodespec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/lexer.nodespec.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/parser.nodespec.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/parser.nodespec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/parser.nodespec.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/scanner.nodespec.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/scanner.nodespec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/test/scanner.nodespec.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/expressions.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/expressions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/expressions.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lexer.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lexer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lexer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser-creators.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser-creators.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser-creators.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/scanner.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/scanner.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/scanner.js.map" afterPath="" />
+    <list default="true" id="a1687b96-b68b-4c19-98b1-f06e5ac5cfc8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="$PROJECT_DIR$/src/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="33">
-              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <caret line="1" column="50" lean-forward="true" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -89,11 +46,21 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="264">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding>
-                <marker date="1492014482000" expanded="true" signature="258:518" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
+                <marker date="1492016328000" expanded="true" signature="283:543" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -227,9 +194,9 @@
         <option value="$PROJECT_DIR$/test/parser.nodespec.ts" />
         <option value="$PROJECT_DIR$/src/parser-creators.ts" />
         <option value="$PROJECT_DIR$/src/parser.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -895,7 +862,7 @@
       <workItem from="1491980230843" duration="1155000" />
       <workItem from="1491988750776" duration="1654000" />
       <workItem from="1491991578608" duration="2716000" />
-      <workItem from="1492014923688" duration="1045000" />
+      <workItem from="1492014923688" duration="1350000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Version">
       <created>1491719833373</created>
@@ -918,7 +885,21 @@
       <option name="project" value="LOCAL" />
       <updated>1492014608819</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Latest">
+      <created>1492016083005</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1492016083005</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Latest">
+      <created>1492016132993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1492016132993</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -954,7 +935,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63636000" />
+    <option name="totallyTimeSpent" value="63941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -967,7 +948,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2560" y="23" width="2560" height="1345" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -991,7 +971,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.264166" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21564734" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21564734" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1110,13 +1090,6 @@
     <entry file="file://$PROJECT_DIR$/src/lexer.js" />
     <entry file="file://$PROJECT_DIR$/src/parser.js" />
     <entry file="file://$PROJECT_DIR$/lib/test.txt" />
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/archy/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1868">
@@ -1236,16 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <marker date="1492014482000" expanded="true" signature="258:518" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser-creators.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1273,7 +1236,25 @@
     <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <caret line="1" column="50" lean-forward="true" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <marker date="1492016328000" expanded="true" signature="283:543" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>

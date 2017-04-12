@@ -1,9 +1,10 @@
 {
   "name": "expression-parser",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Expression Parser",
-  "main": "src/index.js",
-  "typings": "src/index.d.ts",
+  "main": "lib/src/index.js",
+  "typings": "lib/src/index",
+  "files": "lib/src",
   "scripts": {
     "test": "mocha"
   },
