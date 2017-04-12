@@ -1,3 +1,4 @@
+/*
 import {expect} from "chai";
 import {Scanner} from "../src/scanner";
 
@@ -130,4 +131,4 @@ describe("Scanner Tests", () => {
       expect(rs[i]).equal(words[i], words[i]);
     }
   });
-});
+ });*/

@@ -6,41 +6,16 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1687b96-b68b-4c19-98b1-f06e5ac5cfc8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/parser-creators.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/parser.d.ts" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/expressions.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/index.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/index.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/lexer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/parser-creators.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/parser-creators.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/parser.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/parser.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/src/scanner.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/lexer.nodespec.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/lexer.nodespec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/lexer.nodespec.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/parser.nodespec.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/parser.nodespec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/parser.nodespec.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/scanner.nodespec.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/scanner.nodespec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test/scanner.nodespec.js.map" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/expressions.d.ts" afterPath="$PROJECT_DIR$/lib/expressions.d.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/expressions.js" afterPath="$PROJECT_DIR$/lib/expressions.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/index.js" afterPath="$PROJECT_DIR$/lib/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/lexer.d.ts" afterPath="$PROJECT_DIR$/lib/lexer.d.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/lexer.js" afterPath="$PROJECT_DIR$/lib/lexer.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/parser-creators.js" afterPath="$PROJECT_DIR$/lib/parser-creators.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/parser.js" afterPath="$PROJECT_DIR$/lib/parser.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/scanner.d.ts" afterPath="$PROJECT_DIR$/lib/scanner.d.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/src/scanner.js" afterPath="$PROJECT_DIR$/lib/scanner.js" />
+    <list default="true" id="a1687b96-b68b-4c19-98b1-f06e5ac5cfc8" name="Default" comment="Latest">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/expression-parser.iml" afterPath="$PROJECT_DIR$/expression-parser.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/index.d.ts" afterPath="$PROJECT_DIR$/lib/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/lexer.d.ts" afterPath="$PROJECT_DIR$/lib/lexer.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/parser-creators.d.ts" afterPath="$PROJECT_DIR$/lib/parser-creators.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/parser.d.ts" afterPath="$PROJECT_DIR$/lib/parser.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/lexer.nodespec.ts" afterPath="$PROJECT_DIR$/test/lexer.nodespec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/parser.nodespec.ts" afterPath="$PROJECT_DIR$/test/parser.nodespec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/scanner.nodespec.ts" afterPath="$PROJECT_DIR$/test/scanner.nodespec.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -76,23 +51,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="lexer.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lexer.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
               <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
               <folding>
-                <marker date="1492017225000" expanded="true" signature="281:541" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
+                <marker date="1492021574000" expanded="true" signature="282:542" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            <state relative-caret-position="231">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,18 +86,8 @@
       <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lexer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lexer.ts">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -128,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lexer.nodespec.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lexer.nodespec.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/lexer.nodespec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+            <state relative-caret-position="132">
+              <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -140,31 +115,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="expressions.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/expressions.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="parser.nodespec.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/parser.nodespec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="155" column="41" lean-forward="false" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
+            <state relative-caret-position="289">
+              <caret line="152" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wallaby.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wallaby.config.js">
+      <file leaf-file-name="scanner.nodespec.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/scanner.nodespec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tsconfig-schema.json" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/jsonSchemas/tsconfig-schema.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2989">
-              <caret line="236" column="31" lean-forward="false" selection-start-line="236" selection-start-column="31" selection-end-line="236" selection-end-column="31" />
+            <state relative-caret-position="189">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -212,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/@types/global.d.ts" />
         <option value="$PROJECT_DIR$/work/src/index.d.ts" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/test/scanner.nodespec.ts" />
         <option value="$PROJECT_DIR$/dist/bundle.js" />
         <option value="$PROJECT_DIR$/src/@types/index.d.ts" />
         <option value="$PROJECT_DIR$/src/index.d.ts" />
@@ -227,11 +201,12 @@
         <option value="$PROJECT_DIR$/a.a" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/tsconfig.json" />
-        <option value="$PROJECT_DIR$/src/index.ts" />
-        <option value="$PROJECT_DIR$/test/parser.nodespec.ts" />
         <option value="$PROJECT_DIR$/wallaby.config.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/test/parser.nodespec.ts" />
+        <option value="$PROJECT_DIR$/test/scanner.nodespec.ts" />
+        <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/test/lexer.nodespec.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -319,6 +294,46 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scanner.nodespec.ts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression-parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression-parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser.nodespec.ts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression-parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expression-parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lexer.nodespec.ts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -405,7 +420,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Wallaby.js.Main">
+  <component name="RunManager" selected="Mocha.Main">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -923,7 +938,7 @@
       <workItem from="1491980230843" duration="1155000" />
       <workItem from="1491988750776" duration="1654000" />
       <workItem from="1491991578608" duration="2716000" />
-      <workItem from="1492014923688" duration="5332000" />
+      <workItem from="1492014923688" duration="5851000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Version">
       <created>1491719833373</created>
@@ -967,25 +982,17 @@
       <option name="project" value="LOCAL" />
       <updated>1492016354141</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Latest">
+      <created>1492021577121</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1492021577121</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Main - 2017.04.12 at 17h 23m 12s.xml">
-      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Main - 2017.04.12 at 17h 23m 16s.xml">
-      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Main - 2017.04.12 at 17h 23m 19s.xml">
-      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Main - 2017.04.12 at 17h 26m 01s.xml">
-      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Main - 2017.04.12 at 17h 26m 37s.xml">
-      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Main - 2017.04.12 at 17h 28m 05s.xml">
       <configuration name="Main" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -1001,9 +1008,24 @@
     <history-entry file="Main - 2017.04.12 at 17h 29m 10s.xml">
       <configuration name="Main" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Main - 2017.04.12 at 19h 31m 11s.xml">
+      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Main - 2017.04.12 at 19h 31m 39s.xml">
+      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Main - 2017.04.12 at 19h 32m 02s.xml">
+      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Main - 2017.04.12 at 19h 32m 35s.xml">
+      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Main - 2017.04.12 at 19h 32m 38s.xml">
+      <configuration name="Main" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67923000" />
+    <option name="totallyTimeSpent" value="68442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1035,7 +1057,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33599362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.264166" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -1067,6 +1089,9 @@
         <option value="$PROJECT_DIR$/../expression-compiler/src/compiler-visitor.js.map" />
         <option value="$PROJECT_DIR$/test/parser.nodespec.js" />
         <option value="$PROJECT_DIR$/test/lexer.nodespec.js" />
+        <option value="$PROJECT_DIR$/test/scanner.nodespec.js" />
+        <option value="$PROJECT_DIR$/src/scanner.js" />
+        <option value="$PROJECT_DIR$/src/lexer.js" />
       </list>
     </option>
   </component>
@@ -1112,13 +1137,6 @@
     <entry file="file://$PROJECT_DIR$/src/@types/global.d.ts" />
     <entry file="file://$PROJECT_DIR$/work/src/index.js" />
     <entry file="file://$PROJECT_DIR$/src/lexer.d.ts" />
-    <entry file="file://$PROJECT_DIR$/test/scanner.nodespec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lexer.js" />
     <entry file="file://$PROJECT_DIR$/src/parser.js" />
     <entry file="file://$PROJECT_DIR$/lib/test.txt" />
@@ -1217,30 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/expressions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lexer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/jsonSchemas/tsconfig-schema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2989">
@@ -1265,14 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1281,18 +1267,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/parser.nodespec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="155" column="41" lean-forward="false" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wallaby.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
-          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1302,15 +1280,57 @@
         <state relative-caret-position="297">
           <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding>
-            <marker date="1492017225000" expanded="true" signature="281:541" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
+            <marker date="1492021574000" expanded="true" signature="282:542" ph="{&quot;@types/chai&quot;: &quot;^3.4.35&quot;...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state relative-caret-position="396">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/parser.nodespec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="152" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/scanner.nodespec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lexer.nodespec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/expressions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1323,13 +1343,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/lexer.nodespec.ts">
+    <entry file="file://$PROJECT_DIR$/src/lexer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
