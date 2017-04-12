@@ -9,8 +9,6 @@
     "noResolve": true,
     "removeComments": true,
     "noLib": false,
-    "outDir" : "dist",
-    "declarationDir": "dist",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
