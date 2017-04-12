@@ -1,25 +1,16 @@
 {
-  "version": "2.2.1",
+  "version": "2.2.2",
   "compileOnSave": true,
   "compilerOptions": {
-    "sourceMap": true,
     "target": "es5",
     "module": "commonjs",
-    "noImplicitAny": false,
-    "noResolve": true,
-    "removeComments": true,
-    "outDir": "lib/",
-    "noLib": false,
+    "outDir": "lib",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declaration" : true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "declaration": true
   },
   "include" : [
-    "src",
-    "test"
+    "src"
   ]
 }
