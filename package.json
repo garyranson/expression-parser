@@ -1,6 +1,6 @@
 {
   "name": "expression-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Expression Parser",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
