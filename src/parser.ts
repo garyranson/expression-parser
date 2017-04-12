@@ -3,7 +3,7 @@ import {
   ObjectProperties,
   Literal, LiteralNumber, LiteralString, MemberCallExpression, MemberAccessorExpression,
   CallExpression, UnaryExpression, ObjectExpression, ArrayExpression, ConditionalExpression, ScopedAccessorExpression,
-  BinaryExpression, LogicalExpression
+  BinaryExpression, LogicalExpression, Expression
 } from "./expressions";
 import {LexerToken} from "./scanner";
 
