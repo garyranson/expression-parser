@@ -16,7 +16,6 @@
     "experimentalDecorators": true,
     "declaration" : true,
     "typeRoots": [
-      "src/@types",
       "node_modules/@types"
     ]
   },

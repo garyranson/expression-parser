@@ -2,8 +2,8 @@
   "name": "expression-parser",
   "version": "0.0.3",
   "description": "Expression Parser",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
   "scripts": {
     "test": "mocha"
   },
