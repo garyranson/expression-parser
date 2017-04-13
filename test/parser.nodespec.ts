@@ -1,4 +1,3 @@
-/*
 import {Parser} from "../src/parser";
 import {expect} from "chai";
 import {
@@ -166,4 +165,4 @@ describe("Parser Test Plan", () => {
     expect(parseFn("{a 1")).to.throw(Error);
     expect(parseFn("{1:1}")).to.throw(Error);
   });
- });*/
+});

@@ -1,7 +1,7 @@
 import LexerReader from "../src/lexer";
 import {expect} from "chai";
 
-describe("Lexer Reader Tests 1..", () => {
+describe("Lexer Reader Tests 1", () => {
   it("Simple Test 1.", () => {
     let lr = new LexerReader("");
     expect(lr.next()).to.deep.equal({type: "eof", value: "", start: 0, end: 0});
