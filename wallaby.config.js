@@ -9,11 +9,6 @@ module.exports = function (w) {
         "env": {
             type: "node"
         },
-        testFramework: "mocha",
-        "compilers": {
-            "**/*.ts": w.compilers.typeScript({
-                "module": "commonjs"
-            })
-        }
+        testFramework: "mocha"
     }
 };

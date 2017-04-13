@@ -4,14 +4,15 @@
   "description": "Expression Parser",
   "main": "lib/index.js",
   "typings": "lib/index",
+  "author": "Gary Ranson",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garyranson/expression-parser.git"
+  },
   "files": [
     "lib/"
   ],
-  "scripts": {
-    "test": "mocha"
-  },
-  "author": "Gary Ranson",
-  "license": "ISC",
   "devDependencies": {
     "@types/chai": "^3.4.35",
     "@types/gulp": "^4.0.2",
@@ -23,9 +24,5 @@
     "gulp-uglify": "^2.1.2",
     "mocha": "^3.2.0",
     "typescript": "^2.2.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/garyranson/expression-parser.git"
   }
 }
