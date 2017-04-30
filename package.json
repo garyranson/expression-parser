@@ -25,5 +25,12 @@
     "gulp-uglify": "^2.1.2",
     "mocha": "^3.2.0",
     "typescript": "^2.2.2"
+  },
+  "jspm": {
+    "registry": "jspm",
+    "main": "index",
+    "directories": {
+      "lib": "lib"
+    }
   }
 }
