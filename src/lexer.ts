@@ -8,6 +8,6 @@ export default class LexerReader {
   }
 
   next(): LexerToken {
-    return  this.reader.next();
+    return this.reader.next();
   }
 }
