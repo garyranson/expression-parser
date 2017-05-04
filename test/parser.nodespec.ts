@@ -7,6 +7,7 @@ import {
   ConditionalExpression,
   Expression,
   Literal,
+  LiteralConcatenate,
   LiteralNumber,
   LiteralString,
   LogicalExpression,
@@ -19,9 +20,30 @@ import {
 
 describe("Parser Test Plan", () => {
   let parser: Parser;
+  let literalUndefined = new Literal("undefined", undefined);
+  let literal0         = new LiteralNumber(0);
+  let literal1         = new LiteralNumber(1);
+  let literal2         = new LiteralNumber(2);
+  let literal3         = new LiteralNumber(3);
+  let literalFRED      = new LiteralString("FRED");
+  let literalA         = new LiteralString("A");
 
   function parse(str: string): Expression {
     return parser.parseExpression(str);
+  }
+
+  function parseMulti(str: string): Expression[] {
+    return parser.parseExpressions(str);
+  }
+
+  function parseContent(str: string): Expression {
+    return parser.parseContent(str);
+  }
+
+  function parseContentFn(str: string): any {
+    return function () {
+      return parser.parseContent(str);
+    };
   }
 
   function parseFn(str: string): any {
@@ -34,13 +56,54 @@ describe("Parser Test Plan", () => {
     parser = new Parser();
   });
 
+  it("content empty input", () => {
+    expect(parseContent("${1}${2}")).deep.equal(new LiteralConcatenate([literal1, literal2]));
+    expect(parseContent("${1}A${2}")).deep.equal(new LiteralConcatenate([literal1, literalA, literal2]));
+    expect(parseContent("A${1}A${2}")).deep.equal(new LiteralConcatenate([literalA, literal1, literalA, literal2]));
+    expect(parseContent("A${1}A${2}A")).deep.equal(new LiteralConcatenate([literalA, literal1, literalA, literal2, literalA]));
+    expect(parseContent("${1}FRED${2}")).deep.equal(new LiteralConcatenate([literal1, literalFRED, literal2]));
+    expect(parseContent("FRED${1}A${2}")).deep.equal(new LiteralConcatenate([literalFRED, literal1, literalA, literal2]));
+    expect(parseContent("A${1}A${2}FRED")).deep.equal(new LiteralConcatenate([literalA, literal1, literalA, literal2, literalFRED]));
+    expect(parseContent("FRED${1}FRED${2}FRED")).deep.equal(new LiteralConcatenate([literalFRED, literal1, literalFRED, literal2, literalFRED]));
+    expect(parseContent(" A${1}A${2}")).deep.equal(new LiteralConcatenate([new LiteralString(" A"), literal1, literalA, literal2]));
+    expect(parseContent(" A ${1}A${2}")).deep.equal(new LiteralConcatenate([new LiteralString(" A "), literal1, literalA, literal2]));
+    expect(parseContent("A${1} A${2}")).deep.equal(new LiteralConcatenate([literalA, literal1, new LiteralString(" A"), literal2]));
+    expect(parseContent("A${1} A ${2}")).deep.equal(new LiteralConcatenate([literalA, literal1, new LiteralString(" A "), literal2]));
+    expect(parseContent("A${1}A${2} A")).deep.equal(new LiteralConcatenate([literalA, literal1, literalA, literal2, new LiteralString(" A")]));
+    expect(parseContent("A${1}A${2}A ")).deep.equal(new LiteralConcatenate([literalA, literal1, literalA, literal2, new LiteralString("A ")]));
+    expect(parseContent("A${1}A${2}A   ")).deep.equal(new LiteralConcatenate([literalA, literal1, literalA, literal2, new LiteralString("A   ")]));
+    expect(parseContent(null)).deep.equal(new LiteralString(""));
+    expect(parseContent("A")).deep.equal(literalA);
+    expect(parseContent("${1+2}")).deep.equal(new BinaryExpression("+", new LiteralNumber(1), new LiteralNumber(2)));
+    expect(parseContent("${  1  +  2   }")).deep.equal(new BinaryExpression("+", new LiteralNumber(1), new LiteralNumber(2)));
+    expect(parseContentFn("${  1  +  2   ")).to.throw(Error);
+    expect(parseContentFn("AAA${  1  +  2   ")).to.throw(Error);
+    expect(parseContentFn("${  1  +  2  }${1+1")).to.throw(Error);
+  });
+
+
+  it("multi empty input", () => {
+    expect(parseMulti(null)).deep.equal([]);
+    expect(parseMulti("")).deep.equal([]);
+  });
+
+  it("multi 1 expression", () => {
+    expect(parseMulti("1")).deep.equal([new LiteralNumber(1)]);
+    expect(parseMulti("1,")).deep.equal([literal1, literalUndefined]);
+    expect(parseMulti("1,2")).deep.equal([literal1, literal2]);
+    expect(parseMulti("1,2,")).deep.equal([literal1, literal2, literalUndefined]);
+    expect(parseMulti(",")).deep.equal([literalUndefined, literalUndefined]);
+    expect(parseMulti(",,")).deep.equal([literalUndefined, literalUndefined, literalUndefined]);
+  });
+
+
   it("empty input", () => {
-    expect(parse("")).deep.equal(new Literal("undefined", undefined));
-    expect(parse(null)).deep.equal(new Literal("undefined", undefined));
-    expect(parse(undefined)).deep.equal(new Literal("undefined", undefined));
+    expect(parse("")).deep.equal(literalUndefined);
+    expect(parse(null)).deep.equal(literalUndefined);
+    expect(parse(undefined)).deep.equal(literalUndefined);
   });
   it("numeric literal primitives", () => {
-    expect(parse("0")).deep.equal(new LiteralNumber(0));
+    expect(parse("0")).deep.equal(literal0);
     expect(parse("10")).deep.equal(new LiteralNumber(10));
     expect(parse("10.01")).deep.equal(new LiteralNumber(10.01));
     expect(parse("010.01")).deep.equal(new LiteralNumber(10.01));

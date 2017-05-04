@@ -6,7 +6,9 @@ export declare const Constants: {
   literalUndefined: Literal;
 };
 export declare const Creators: {
-  createLiteralExpression: (type: string, value: string) => Expression;
+  createConcatenate: (set: Expression[]) => Expression;
+  createLiteralString: (value: string) => Expression;
+  createLiteralNumer: (value: string) => Expression;
   createMemberCallExpression: (lhs: Expression, expr: Expression, args: Expression[]) => Expression;
   createMemberAccessorExpression: (lhs: Expression, rhs: Expression, computed: boolean) => Expression;
   createCallExpression: (lhs: Expression, args: Expression[]) => Expression;

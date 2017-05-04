@@ -7,33 +7,99 @@ let emptyExpressionList: Array<Expression> = [];
 
 export class Parser {
   parseExpression(input: string): Expression {
-    return new ParserImpl(new LexerReader(input || "")).getExpression();
+    let parser = new ParserImpl(input || "");
+
+    if (parser.eof()) {
+      return Constants.literalUndefined;
+    }
+    const expr = parser.parseExpression();
+    if (parser.eof()) {
+      return expr;
+    }
+    parser.raiseError("Unconsumed token");
+  }
+
+  parseExpressions(input: string) {
+    let parser = new ParserImpl(input || "");
+
+    const expressions: Expression[] = [];
+
+    while (!parser.eof()) {
+      if (parser.expect(",")) {
+        expressions.push(Constants.literalUndefined);
+        // Trailing comma?
+        if (parser.eof()) {
+          expressions.push(Constants.literalUndefined);
+        }
+      } else {
+        expressions.push(parser.parseExpression());
+        if (parser.eof()) {
+          break;
+        }
+        if (parser.expect(",")) {
+          // Trailing comma?
+          if (parser.eof()) {
+            expressions.push(Constants.literalUndefined);
+          }
+        } else {
+          parser.raiseError("Unexpected token. Expected comma or eof");
+        }
+      }
+    }
+    return expressions;
+  }
+
+  parseContent(input: string) {
+    if (!input) {
+      input = "";
+    }
+    let parser = new ParserImpl(input || "");
+
+    let pos = input.indexOf("${");
+
+    if (pos === -1) {
+      return Creators.createLiteralString(input);
+    }
+
+    let concat: Expression[] = [];
+    let lastPos              = 0;
+
+    while (pos !== -1) {
+      if (lastPos !== pos) {
+        concat.push(Creators.createLiteralString(input.substr(lastPos, pos - lastPos)));
+      }
+      parser.reset(pos + 2);
+      concat.push(parser.parseExpression());
+      lastPos = parser.cur.end + 1;
+      if (!parser.expect("}")) {
+        parser.raiseError("Malformed Content Expression");
+      }
+      pos = input.indexOf("${", lastPos);
+      if (pos === -1 && lastPos < input.length) {
+        concat.push(Creators.createLiteralString(input.substr(lastPos)));
+      }
+    }
+    return concat.length === 1
+      ? concat[0]
+      : Creators.createConcatenate(concat);
   }
 }
 
 class ParserImpl {
-  cur: LexerToken;
+  private iterator: LexerReader;
+          cur: LexerToken;
 
-  constructor(private iterator: LexerReader) {
-    console.assert(!!iterator);
+  constructor(input: string) {
+    this.iterator = new LexerReader(input);
     this.consume();
   }
 
-  getExpression() {
-    return this.eof()
-      ? Constants.literalUndefined
-      : this.getExpression2();
-  }
-
-  getExpression2() {
-    const expr = this.parseExpression();
-    if (this.eof()) {
-      return expr;
-    }
-    this.raiseError(`Unconsumed token ${this.cur.value}`);
-  }
-
   consume(): void {
+    this.cur = this.iterator.next();
+  }
+
+  reset(pos: number): void {
+    this.iterator.setPos(pos);
     this.cur = this.iterator.next();
   }
 
@@ -148,7 +214,7 @@ class ParserImpl {
   parseNamedMember(lhs: Expression): Expression {
     this.consume();
     if (this.cur.type === "token") {
-      const expr = Creators.createLiteralExpression("string", this.cur.value);
+      const expr = Creators.createLiteralString(this.cur.value);
       this.consume();
       return this.cur.value === "("
         ? Creators.createMemberCallExpression(lhs, expr, this.parseArgs())
@@ -193,7 +259,9 @@ class ParserImpl {
 
   parseLiteral(type: string, value: string) {
     this.consume();
-    return Creators.createLiteralExpression(type, value);
+    return type === "number"
+      ? Creators.createLiteralNumer(value)
+      : Creators.createLiteralString(value);
   }
 
   parseKeyword(keyword: string): Expression {

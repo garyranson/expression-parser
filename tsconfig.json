@@ -3,7 +3,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "outDir": "lib",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,

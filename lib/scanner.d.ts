@@ -4,6 +4,8 @@ export declare class Scanner {
     private eof;
     private mark;
     constructor(str: string);
+
+  setPos(pos: number): void;
     next(): LexerToken;
     readPastWhitespace(): number;
     readString(quoteChar: string): LexerToken;

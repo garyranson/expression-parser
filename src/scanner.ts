@@ -11,6 +11,10 @@ export class Scanner {
     this.eof  = !str;
   }
 
+  setPos(pos: number) {
+    this.idx = pos;
+  }
+
   next(): LexerToken {
     const ch = this.readPastWhitespace();
     return ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || ch === 95 || ch === 36)  /*A-Z$_*/
@@ -154,7 +158,7 @@ function unescape(ch: number): string {
   }
 }
 
-export class LexerToken  {
+export class LexerToken {
   constructor(public type: string, public value: string, public start: number, public end: number) {
   }
 }

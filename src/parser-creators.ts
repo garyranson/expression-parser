@@ -5,6 +5,7 @@ import {
   ConditionalExpression,
   Expression,
   Literal,
+  LiteralConcatenate,
   LiteralNumber,
   LiteralString,
   LogicalExpression,
@@ -24,15 +25,15 @@ export const Constants = {
 };
 
 export const Creators = {
-  createLiteralExpression: function (type: string, value: string): Expression {
-    switch (type) {
-      case "string":
-        return new LiteralString(value);
-      case "number":
-        return new LiteralNumber(parseFloat(value));
-    }
+  createConcatenate:          function (set: Expression[]): Expression {
+    return new LiteralConcatenate(set);
   },
-
+  createLiteralString:        function (value: string): Expression {
+    return new LiteralString(value);
+  },
+  createLiteralNumer:         function (value: string): Expression {
+    return new LiteralNumber(parseFloat(value));
+  },
   createMemberCallExpression: function (lhs: Expression, expr: Expression, args: Expression[]): Expression {
     return new MemberCallExpression(lhs, expr, args);
   },

@@ -7,6 +7,10 @@ export default class LexerReader {
     this.reader = new Scanner(value);
   }
 
+  setPos(pos: number): void {
+    this.reader.setPos(pos);
+  }
+
   next(): LexerToken {
     return this.reader.next();
   }
