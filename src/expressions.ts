@@ -131,6 +131,6 @@ export class LogicalExpression implements Expression {
   }
 
   visit<T>(visitor: Visitor<T>): T {
-    return visitor.visitBinary(this.operator, this.left, this.right);
+    return visitor.visitLogical(this.operator, this.left, this.right);
   }
 }
