@@ -1,4 +1,5 @@
 import {Expression, Literal, ObjectProperties} from "./expressions";
+
 export declare const Constants: {
   literalNull: Literal;
   literalTrue: Literal;
@@ -22,5 +23,6 @@ export declare const Creators: {
 };
 export interface ExpressionFactory {
   precedence: number;
+
   create(left: Expression, right: Expression): Expression;
 }

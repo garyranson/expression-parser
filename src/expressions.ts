@@ -134,3 +134,4 @@ export class LogicalExpression implements Expression {
     return visitor.visitLogical(this.operator, this.left, this.right);
   }
 }
+
