@@ -9,7 +9,7 @@ export declare const Constants: {
 export declare const Creators: {
   createConcatenate: (set: Expression[]) => Expression;
   createLiteralString: (value: string) => Expression;
-  createLiteralNumer: (value: string) => Expression;
+  createLiteralNumber: (value: string) => Expression;
   createMemberCallExpression: (lhs: Expression, expr: Expression, args: Expression[]) => Expression;
   createMemberAccessorExpression: (lhs: Expression, rhs: Expression, computed: boolean) => Expression;
   createCallExpression: (lhs: Expression, args: Expression[]) => Expression;

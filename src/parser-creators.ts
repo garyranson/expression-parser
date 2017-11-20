@@ -31,7 +31,7 @@ export const Creators = {
   createLiteralString:        function (value: string): Expression {
     return new LiteralString(value);
   },
-  createLiteralNumer:         function (value: string): Expression {
+  createLiteralNumber:        function (value: string): Expression {
     return new LiteralNumber(parseFloat(value));
   },
   createMemberCallExpression: function (lhs: Expression, expr: Expression, args: Expression[]): Expression {

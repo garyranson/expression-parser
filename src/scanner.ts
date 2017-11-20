@@ -159,6 +159,7 @@ function unescape(ch: number): string {
 }
 
 export class LexerToken {
+  // noinspection JSUnusedGlobalSymbols
   constructor(public type: string, public value: string, public start: number, public end: number) {
   }
 }

@@ -260,7 +260,7 @@ class ParserImpl {
   parseLiteral(type: string, value: string) {
     this.consume();
     return type === "number"
-      ? Creators.createLiteralNumer(value)
+      ? Creators.createLiteralNumber(value)
       : Creators.createLiteralString(value);
   }
 

@@ -3,7 +3,7 @@ export interface Expression {
 }
 
 export interface Visitor<T> {
-  visitConcatenate(exprs: Expression[]): T;
+  visitConcatenate(expressions: Expression[]): T;
   visitBinary(operator: string, left: Expression, right: Expression): T;
   visitLogical(operator: string, left: Expression, right: Expression): T;
   visitLiteral(value: any, raw: string): T;
@@ -31,11 +31,11 @@ export class Literal implements Expression {
   }
 }
 export class LiteralConcatenate implements Expression {
-  constructor(private exprs: Expression[]) {
+  constructor(private expressions: Expression[]) {
   }
 
   visit<T>(visitor: Visitor<T>): T {
-    return visitor.visitConcatenate(this.exprs);
+    return visitor.visitConcatenate(this.expressions);
   }
 }
 export class LiteralString implements Expression {

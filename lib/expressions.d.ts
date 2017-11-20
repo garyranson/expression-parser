@@ -2,7 +2,7 @@ export interface Expression {
     visit<T>(visit: Visitor<T>): T;
 }
 export interface Visitor<T> {
-  visitConcatenate(exprs: Expression[]): T;
+  visitConcatenate(expressions: Expression[]): T;
     visitBinary(operator: string, left: Expression, right: Expression): T;
     visitLogical(operator: string, left: Expression, right: Expression): T;
     visitLiteral(value: any, raw: string): T;
@@ -26,9 +26,9 @@ export declare class Literal implements Expression {
     visit<T>(visitor: Visitor<T>): T;
 }
 export declare class LiteralConcatenate implements Expression {
-  private exprs;
+  private expressions;
 
-  constructor(exprs: Expression[]);
+  constructor(expressions: Expression[]);
 
   visit<T>(visitor: Visitor<T>): T;
 }
