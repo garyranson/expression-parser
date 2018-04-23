@@ -6,6 +6,7 @@ export interface Visitor<T> {
     visitBinary(operator: string, left: Expression, right: Expression): T;
     visitLogical(operator: string, left: Expression, right: Expression): T;
     visitLiteral(value: any, raw: string): T;
+    visitToken(value: any): T;
     visitScopedAccessor(name: string): T;
     visitMember(object: Expression, property: Expression, computed: boolean): T;
     visitMemberCall(object: Expression, expression: Expression, args: Expression[]): T;
@@ -28,6 +29,11 @@ export declare class Literal implements Expression {
 export declare class LiteralConcatenate implements Expression {
     private expressions;
     constructor(expressions: Expression[]);
+    visit<T>(visitor: Visitor<T>): T;
+}
+export declare class Token implements Expression {
+    private raw;
+    constructor(raw: string);
     visit<T>(visitor: Visitor<T>): T;
 }
 export declare class LiteralString implements Expression {
