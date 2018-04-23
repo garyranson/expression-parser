@@ -1,2 +1,2 @@
-export {Parser} from "./parser";
-export {Expression, Visitor} from "./expressions";
+export { Parser } from "./parser";
+export { Expression, Visitor } from "./expressions";

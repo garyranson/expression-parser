@@ -14,7 +14,7 @@ import {
   MemberAccessorExpression,
   MemberCallExpression,
   ObjectExpression,
-  ScopedAccessorExpression,
+  ScopedAccessorExpression, Token,
   UnaryExpression
 } from "../src/expressions";
 
@@ -177,17 +177,17 @@ describe("Parser Test Plan", () => {
     expect(parseFn("1*(2+3")).to.throw(Error);
   });
   it("member accessors", () => {
-    expect(parse("a.b")).deep.equal(new MemberAccessorExpression(new ScopedAccessorExpression("a"), new LiteralString("b"), false));
-    expect(parse("a.b.c")).deep.equal(new MemberAccessorExpression(new MemberAccessorExpression(new ScopedAccessorExpression("a"), new LiteralString("b"), false), new LiteralString("c"), false));
+    expect(parse("a.b")).deep.equal(new MemberAccessorExpression(new ScopedAccessorExpression("a"), new Token("b"), false));
+    expect(parse("a.b.c")).deep.equal(new MemberAccessorExpression(new MemberAccessorExpression(new ScopedAccessorExpression("a"), new Token("b"), false), new Token("c"), false));
     expect(parseFn("a..")).to.throw(Error);
     expect(parseFn("a.'b'")).to.throw(Error);
     expect(parseFn("a.1")).to.throw(Error);
   });
   it("member calls", () => {
-    expect(parse("a.b()")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new LiteralString("b"), []));
-    expect(parse("a.b(1)")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new LiteralString("b"), [new LiteralNumber(1)]));
-    expect(parse("a.b(1,2)")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new LiteralString("b"), [new LiteralNumber(1), new LiteralNumber(2)]));
-    expect(parse("a.b(d,e)")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new LiteralString("b"), [new ScopedAccessorExpression("d"), new ScopedAccessorExpression("e")]));
+    expect(parse("a.b()")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new Token("b"), []));
+    expect(parse("a.b(1)")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new Token("b"), [new LiteralNumber(1)]));
+    expect(parse("a.b(1,2)")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new Token("b"), [new LiteralNumber(1), new LiteralNumber(2)]));
+    expect(parse("a.b(d,e)")).deep.equal(new MemberCallExpression(new ScopedAccessorExpression("a"), new Token("b"), [new ScopedAccessorExpression("d"), new ScopedAccessorExpression("e")]));
     expect(parseFn("a.b(")).to.throw(Error);
     expect(parseFn("a.b(c")).to.throw(Error);
   });

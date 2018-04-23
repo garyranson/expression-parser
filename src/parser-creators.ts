@@ -13,7 +13,7 @@ import {
   MemberCallExpression,
   ObjectExpression,
   ObjectProperties,
-  ScopedAccessorExpression,
+  ScopedAccessorExpression, Token,
   UnaryExpression
 } from "./expressions";
 
@@ -27,6 +27,9 @@ export const Constants = {
 export const Creators = {
   createConcatenate:          function (set: Expression[]): Expression {
     return new LiteralConcatenate(set);
+  },
+  createToken:        function (value: string): Expression {
+    return new Token(value);
   },
   createLiteralString:        function (value: string): Expression {
     return new LiteralString(value);

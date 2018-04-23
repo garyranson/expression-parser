@@ -214,7 +214,7 @@ class ParserImpl {
   parseNamedMember(lhs: Expression): Expression {
     this.consume();
     if (this.cur.type === "token") {
-      const expr = Creators.createLiteralString(this.cur.value);
+      const expr = Creators.createToken(this.cur.value);
       this.consume();
       return this.cur.value === "("
         ? Creators.createMemberCallExpression(lhs, expr, this.parseArgs())
